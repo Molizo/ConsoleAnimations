@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleAnimations
 {
@@ -14,30 +11,40 @@ namespace ConsoleAnimations
         {
             Console.Title = "Console Animations";
             Console.CursorVisible = false;
-            int selection = menu(animations, "Console Animations");
+            int selection = Menu(animations, "Console Animations");
 
             Console.WriteLine("Selected " + animations[selection]);
             Console.Read();
         }
 
-        private static int menu(string[] options, string title)
+        private static int Menu(string[] options, string title = "")
         {
+            /// <summary>This method displays a menu to the user
+            /// <para>The method returns an integer based on the user's selection</para>
+            /// <param name="options">Used to indicate menu options.</param>
+            /// <param name="title">Used to indicate menu title.</param>
+            /// </summary>
+
             int selection = 0;
 
             //Initializes console window
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkBlue;
+
         //Displays the menu to the user
         menuDisplay:
             {
                 Console.Clear();
 
                 //Displays the title
-                for (int i = 0; i < title.Length + 4; i++)
-                    Console.Write("▄");
-                Console.WriteLine(System.Environment.NewLine + "█ " + title + " █");
-                for (int i = 0; i < title.Length + 4; i++)
-                    Console.Write("▀");
+                if (title != string.Empty)
+                {
+                    for (int i = 0; i < title.Length + 4; i++)
+                        Console.Write("▄");
+                    Console.WriteLine(System.Environment.NewLine + "█ " + title + " █");
+                    for (int i = 0; i < title.Length + 4; i++)
+                        Console.Write("▀");
+                }
                 Console.WriteLine();
 
                 for (int i = 0; i < animations.Count(); i++)
