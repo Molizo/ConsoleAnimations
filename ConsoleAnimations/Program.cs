@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleAnimations
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            Console.WriteLine("This is line 1");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Write("This is line 2");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine("   and this is still line 2");
+
+            Console.WriteLine("Press enter to terminate...");
+            Console.Read();
         }
     }
 }
