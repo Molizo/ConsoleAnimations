@@ -13,7 +13,7 @@ namespace ConsoleAnimations
         private static void Main(string[] args)
         {
             int selection = mainMenu();
-            Console.WriteLine("Selected" + selection);
+            Console.WriteLine("Selected " + animations[selection]);
             Console.Read();
         }
 
@@ -26,23 +26,50 @@ namespace ConsoleAnimations
             Console.Clear();
             while (true)
             {
-                Console.Clear();
-                if (selection < 0)
-                    selection = animations.Count() - 1;
-                else if (selection >= animations.Count())
-                    selection = 0;
-                for (int i = 0; i < animations.Count(); i++)
+                //Redraws the menu only if a key is pressed
+                if (Console.KeyAvailable)
                 {
-                    if (i == selection)
+                    Console.Clear();
+
+                    //Gets the inputted key
+                    ConsoleKey inputKey = new ConsoleKey();
+                    inputKey = Console.ReadKey(true).Key;
+
+                    //Decides what to do
+                    switch (inputKey)
                     {
-                        Console.ForegroundColor = ConsoleColor.DarkBlue;
-                        Console.BackgroundColor = ConsoleColor.White;
-                        Console.WriteLine(animations[i]);
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.BackgroundColor = ConsoleColor.DarkBlue;
+                        case ConsoleKey.UpArrow:
+                            selection--;
+                            break;
+
+                        case ConsoleKey.DownArrow:
+                            selection++;
+                            break;
+
+                        case ConsoleKey.Enter:
+                            return selection;
                     }
-                    else
-                        Console.WriteLine(animations[i]);
+
+                    //Check for over or underflows of the selected item variable
+                    if (selection < 0)
+                        selection = animations.Count() - 1;
+                    else if (selection >= animations.Count())
+                        selection = 0;
+
+                    //Displays the menu to the user
+                    for (int i = 0; i < animations.Count(); i++)
+                    {
+                        if (i == selection)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.BackgroundColor = ConsoleColor.White;
+                            Console.WriteLine(animations[i]);
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.BackgroundColor = ConsoleColor.DarkBlue;
+                        }
+                        else
+                            Console.WriteLine(animations[i]);
+                    }
                 }
             }
         }
