@@ -14,26 +14,32 @@ namespace ConsoleAnimations
         {
             Console.Title = "Console Animations";
             Console.CursorVisible = false;
-            int selection = mainMenu();
+            int selection = menu(animations, "Console Animations");
 
             Console.WriteLine("Selected " + animations[selection]);
             Console.Read();
         }
 
-        private static int mainMenu()
+        private static int menu(string[] options, string title)
         {
             int selection = 0;
 
-            //Initializes for display
+            //Initializes console window
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkBlue;
         //Displays the menu to the user
         menuDisplay:
             {
                 Console.Clear();
-                Console.WriteLine("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄" + System.Environment.NewLine +
-                                  "█ Console Animations █" + System.Environment.NewLine +
-                                  "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀" + System.Environment.NewLine);
+
+                //Displays the title
+                for (int i = 0; i < title.Length + 4; i++)
+                    Console.Write("▄");
+                Console.WriteLine(System.Environment.NewLine + "█ " + title + " █");
+                for (int i = 0; i < title.Length + 4; i++)
+                    Console.Write("▀");
+                Console.WriteLine();
+
                 for (int i = 0; i < animations.Count(); i++)
                 {
                     Console.Write("  "); //Adds space before the text so that it looks better
@@ -41,13 +47,14 @@ namespace ConsoleAnimations
                     {
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.WriteLine(animations[i]);
+                        Console.WriteLine(options[i]);
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.DarkBlue;
                     }
                     else
-                        Console.WriteLine(animations[i]);
+                        Console.WriteLine(options[i]);
                 }
+                System.Threading.Thread.Sleep(10);
             }
             while (true)
             {
@@ -75,8 +82,8 @@ namespace ConsoleAnimations
 
                     //Check for over- or underflows of the selected item variable
                     if (selection < 0)
-                        selection = animations.Count() - 1;
-                    else if (selection >= animations.Count())
+                        selection = options.Count() - 1;
+                    else if (selection >= options.Count())
                         selection = 0;
                     goto menuDisplay;
                 }

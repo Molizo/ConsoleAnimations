@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAnimations", "ConsoleAnimations\ConsoleAnimations.csproj", "{957FC4DA-AA21-49C1-9663-12B0BCD36537}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAnimations", "ConsoleAnimations\ConsoleAnimations.csproj", "{B917BB9C-37F3-4F72-AA25-B6000D0747C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{957FC4DA-AA21-49C1-9663-12B0BCD36537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957FC4DA-AA21-49C1-9663-12B0BCD36537}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{957FC4DA-AA21-49C1-9663-12B0BCD36537}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{957FC4DA-AA21-49C1-9663-12B0BCD36537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B917BB9C-37F3-4F72-AA25-B6000D0747C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B917BB9C-37F3-4F72-AA25-B6000D0747C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B917BB9C-37F3-4F72-AA25-B6000D0747C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B917BB9C-37F3-4F72-AA25-B6000D0747C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
