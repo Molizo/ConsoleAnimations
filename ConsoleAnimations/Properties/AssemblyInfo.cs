@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b917bb9c-37f3-4f72-aa25-b6000d0747c2")]
+[assembly: Guid("957fc4da-aa21-49c1-9663-12b0bcd36537")]
 
 // Version information for an assembly consists of the following four values:
 //
