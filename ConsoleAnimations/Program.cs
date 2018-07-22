@@ -62,7 +62,7 @@ namespace ConsoleAnimations
                     for (int i = 0; i < title.Length + 4; i++)
                         Console.Write("▀");
                 }
-                Console.WriteLine();
+                Console.WriteLine(System.Environment.NewLine);
 
                 for (int i = 0; i < animations.Count(); i++)
                 {
