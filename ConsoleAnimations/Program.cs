@@ -3,18 +3,33 @@ using System.Linq;
 
 namespace ConsoleAnimations
 {
-    internal class Program
+    public class MainMenu
     {
-        private static string[] animations = { "Test 1", "Test 2", "Test 3", "Test4", "Test555555555555", "Test283" };
+        private static string[] animations = { "Random Numbers", "Exit" };
 
         private static void Main(string[] args)
         {
-            Console.Title = "Console Animations";
-            Console.CursorVisible = false;
-            int selection = Menu(animations, "Console Animations");
+            while (true)
+            {
+                Console.Title = "Console Animations | Main Menu";
+                Console.CursorVisible = false;
+                int selection = Menu(animations, "Console Animations");
+                Console.Title = "Console Animations | " + animations[selection];
+                switch (animations[selection])
+                {
+                    case "Random Numbers":
+                        RandomNumbers.Show();
+                        break;
 
-            Console.WriteLine("Selected " + animations[selection]);
-            Console.Read();
+                    case "Exit":
+                        break;
+
+                    default:
+                        Console.WriteLine("\n\nAn error has occured.\nPress any key to terminate...");
+                        Console.Read();
+                        break;
+                }
+            }
         }
 
         private static int Menu(string[] options, string title = "")
@@ -39,9 +54,11 @@ namespace ConsoleAnimations
                 //Displays the title
                 if (title != string.Empty)
                 {
+                    Console.Write("  ");
                     for (int i = 0; i < title.Length + 4; i++)
                         Console.Write("▄");
-                    Console.WriteLine(System.Environment.NewLine + "█ " + title + " █");
+                    Console.WriteLine(System.Environment.NewLine + "  █ " + title + " █");
+                    Console.Write("  ");
                     for (int i = 0; i < title.Length + 4; i++)
                         Console.Write("▀");
                 }
